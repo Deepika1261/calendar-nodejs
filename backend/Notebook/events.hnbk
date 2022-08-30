@@ -1,0 +1,42 @@
+- kind: 2
+  language: dothttp-vscode
+  value: |-
+    @name('base')
+    GET 'http://localhost:3000'
+  outputs: []
+- kind: 2
+  language: dothttp-vscode
+  value: |-
+    @name('add'): "base"
+    POST '/add_event'
+    json(
+        {
+            "time":"2021-09-01T17:14:00",
+            "subject":" party"
+        }
+    )
+  outputs: []
+- kind: 2
+  language: dothttp-vscode
+  value: |-
+    @name('update'): "base"
+    POST '/update_event?id=2'
+    json(
+        {
+            "time":"2020-09-02T17:14:00",
+            "subject":"hehe"
+        }
+    )
+  outputs: []
+- kind: 2
+  language: dothttp-vscode
+  value: |-
+    @name('get all'): "base"
+    GET '/retrieve'
+  outputs: []
+- kind: 2
+  language: dothttp-vscode
+  value: |-
+    @name('delete'): "base"
+    DELETE '/delete_event?id=2'
+  outputs: []
